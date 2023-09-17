@@ -11,13 +11,13 @@ conn = sqlite3.connect('db.sqlite3')
 query = "SELECT * FROM app_empresa"
 df = pd.read_sql_query(query, conn)
 
-fig = px.bar(df, x="funcionarios", y="nome_setor", color="id", barmode="group")
+fig = px.bar(df, x="nome_produto", y="quantidade", color="id", barmode="group")
 
 app.layout = html.Div(children=[
-    html.H1(children='Hello Dash'),
+    html.H1(children='GRÁFICO'),
 
     html.Div(children='''
-        Dash: A web application framework for your data.
+        Gráfico de uma empresa
     '''),
 
     dcc.Graph(

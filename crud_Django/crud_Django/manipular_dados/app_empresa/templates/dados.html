@@ -9,27 +9,21 @@
 </head>
 
 <body>
-    <a style="color: blue; position: absolute; left: 33%; text-decoration-line: none;" href="/salDados">Adicionar dados</a>
+    <a style="color: blue; position: absolute; left: 40%; text-decoration-line: none;" href="/salDados">Adicionar dados</a>
     <br>
-    <table border="1" style="position: absolute; top: 5%; left: 15%;">
+    <table border="1" style="position: absolute; top: 5%; left: 33%;">
         <thead>
             <tr>
-                <th>Nome do setor</th>
-                <th>Funcionarios</th>
-                <th>Fornecedores</th>
-                <th>Produtos</th>
-                <th>Empresa terceira</th>
+                <th>Nome do produto</th>
+                <th>Quantidade</th>
                 <th>Ação</th>
             </tr>
         </thead>
         <tbody>
             {% for getDados in getDados %}
             <tr>
-                <td>{{getDados.nome_setor}}</td>
-                <td>{{getDados.funcionarios}}</td>
-                <td>{{getDados.fornecedores}}</td>
-                <td>{{getDados.produtos}}</td>
-                <td>{{getDados.empresa_terceira}}</td>
+                <td>{{getDados.nome_produto}}</td>
+                <td>{{getDados.quantidade}}</td>
                 <td>
                     <a href="/editar/{{getDados.id}}">Editar</a>
                     <a href="/excluir/{{getDados.id}}">Excluir</a>
