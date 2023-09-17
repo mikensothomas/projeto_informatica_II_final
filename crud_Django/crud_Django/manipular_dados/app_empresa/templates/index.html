@@ -19,10 +19,12 @@
             <div>
                 <a style="text-decoration-line: none;" href="/dados">Página de dados</a>
                 <div style="text-align: center;">
-                    <p>Nome do produto:</p>{{ form.nome_produto }}
+                    <p>Nome do produto:</p>
+                    <input type="text" name="nome_produto" value="{{getDados.nome_produto}}">
                 </div>
                 <div style="text-align: center;">
-                    <p>Quantidade:</p>{{ form.quantidade }}
+                    <p>Quantidade:</p>
+                    <input type="number" name="quantidade" value="{{getDados.quantidade}}">
                 </div>
                 <div style="text-align: center;">
                     <br>
