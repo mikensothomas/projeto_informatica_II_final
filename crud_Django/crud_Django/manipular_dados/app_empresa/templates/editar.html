@@ -11,25 +11,48 @@
 <body>
     <form method="POST" action="/atualizar/{{getDados.id}}">
         {% csrf_token %}
-            <fieldset style="width: 50%; background-color: aqua; position: absolute; left: 25%;">
+            <fieldset style="width: 50%; height: 50%; background-color: aqua; position: absolute; left: 25%;">
                 <legend style="text-align: center; color: blue;">
                     EDITAR OS DADOS
                 </legend>
-                <div>
-                    Nome do setor: <input type="text" name="nome_produto" value="{{getDados.nome_produto}}" />
+                <div style="text-align: center;">
+                   <p>Nome do setor:</p>
+                   <input type="text" name="nome_produto" value="{{getDados.nome_produto}}" />
                 </div>
                 <br>
     
-                <div>
-                    Funcionarios: <input type="number" name="quantidade" value="{{getDados.quantidade}}" />
+                <div style="text-align: center;">
+                    <p>Funcionarios:</p>
+                    <input type="text" id="campoDeEntrada" name="quantidade" value="{{getDados.quantidade}}" />
                 </br>
                 <br>
+
+                <div style="position: absolute; left: 38%; position: absolute; top: 55%;">
+                    <button type="button" onclick="aumentarValor()" style="cursor: pointer;">Aumentar</button>
+                    <button type="button" onclick="diminuirValor()" style="cursor: pointer;">Diminuir</button>
+                </div>
     
-                <div style="text-align: center;">
+                <div style="text-align: center; position: absolute; top: 75%; left: 45%;">
                     <button style="cursor: pointer;" type="submit">EDITAR</button>
                 </div>
             </fieldset>
     </form>
+
+    <script>
+        function aumentarValor() {
+             var campo = document.getElementById('campoDeEntrada');
+             var valorAtual = parseFloat(campo.value) || 0;
+             valorAtual++;
+             campo.value = valorAtual;
+         }
+
+        function diminuirValor() {
+             var campo = document.getElementById('campoDeEntrada');
+             var valorAtual = parseFloat(campo.value) || 0;
+             valorAtual--;
+             campo.value = valorAtual;
+         }
+    </script>
 </body>
 
 </html>
